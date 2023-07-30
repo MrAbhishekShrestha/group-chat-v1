@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from "@angular/core";
 import { WebSocketSubject, webSocket } from 'rxjs/webSocket'
-import { Message } from "./app.model";
+import { Message } from "../models/app.model";
 import { Observable, of } from "rxjs";
 import { catchError, map, switchMap } from "rxjs/operators";
 

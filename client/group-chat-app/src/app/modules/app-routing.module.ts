@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GroupChatComponent } from './group-chat.component';
-import { ErrorPageComponent } from './error-page.component';
+import { GroupChatComponent } from '../group-chat.component';
+import { ErrorPageComponent } from '../error-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'group-chat', pathMatch: 'full' },
