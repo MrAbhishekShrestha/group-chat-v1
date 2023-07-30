@@ -36,13 +36,13 @@ wss.on('connection', (ws: WebSocketAug) => {
     const msg = JSON.parse(message) as Message;
     setTimeout(() => {
       if (msg.isBroadcast) {
-        wss.clients.forEach(client => client.send(`(BROADCAST) ${msg.sender}: ${msg.content}`));
+        wss.clients.forEach(client => client.send(JSON.stringify(msg)));
       } else {
-        ws.send(`You sent: ${msg.content}`);
+        ws.send(JSON.stringify(msg));
       }
-    }, 500);
+    }, 100);
   });
-})
+});
 
 // continuously ping the server to check if the connection is active
 setInterval(() => {
@@ -55,6 +55,6 @@ setInterval(() => {
 }, 6000);
 
 // start the server
-server.listen(process.env.PORT || 8999, () => {
+server.listen(process.env.PORT || 3000, () => {
   console.log(`Running on port ws://localhost:${(server.address() as WebSocket.AddressInfo).port}`);
 });
