@@ -4,9 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <app-header></app-header>
-    <router-outlet></router-outlet>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   `,
-  styles: []
+  styles: [`
+  `]
 })
 export class AppComponent {
   title = 'group-chat-app';
