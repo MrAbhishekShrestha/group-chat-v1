@@ -11,7 +11,9 @@ import { catchError, map, switchMap } from "rxjs/operators";
 export class WebsocketService implements OnDestroy {
   connection$: WebSocketSubject<Message> | null;
   RETRY_SECONDS = 10;
-  API_URL = "http://localhost:3000";
+  HOST = "192.168.10.80";
+  PORT = "3000";
+  API_URL = `http://${this.HOST}:${this.PORT}`;
 
   connect(): Observable<Message> {
     return of(this.API_URL).pipe(
